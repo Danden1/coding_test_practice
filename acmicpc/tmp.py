@@ -6,4 +6,4 @@ a.appendleft(3)
 b = a
 a = deque()
 
-print(b,a)
+print(b[0],a)
