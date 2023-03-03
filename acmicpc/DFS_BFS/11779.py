@@ -5,21 +5,21 @@ from collections import deque
 n = int(sys.stdin.readline())
 m = int(sys.stdin.readline())
 
-board = [deque() for _ in range(n+1)]
+board = [[] for _ in range(n+1)]
 
 for _ in range(m):
     a,b,c = map(int, sys.stdin.readline().split())
     
-    board[a].append([b,c])
+    board[a].append((b,c))
     
 start, end = map(int, sys.stdin.readline().split())
     
 
-hq = deque()
+hq = []
 
-heapq.heappush(hq, [0, 1])
+heapq.heappush(hq, (0, start))
 
-dk = [[987654321, -1] for i in range(n+1)]
+dk = [[987654321, -1] for _ in range(n+1)]
 dk[start][0] = 0
 dk[start][1] = start
 
@@ -37,7 +37,7 @@ while hq:
             dk[nx_node][1] = cur_node
             
             
-            heapq.heappush(hq, [nx_dst, nx_node])
+            heapq.heappush(hq, (nx_dst, nx_node))
         
 
 cur = end
