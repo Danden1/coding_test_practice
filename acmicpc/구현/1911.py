@@ -15,7 +15,6 @@ total = 0
 for start, end in board:
     if exceed >= start:
         start = exceed+1
-        print(start)
         
     if start > end:
         continue
@@ -29,9 +28,7 @@ for start, end in board:
         total += 1
         exceed = start + need//l * l + l-1
         
-    print(total)
+
 
 print(total)
-        
-        
     
