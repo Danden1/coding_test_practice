@@ -21,7 +21,7 @@ def solution(s):
                 if tmp_count == 1:
                     tmp_answer += i
                 else:
-                    tmp_answer += i + tmp_count//10+1
+                    tmp_answer += i + len(str(tmp_count))
                 tmp_count = 1
                 
                 sub_str=s[j:j+i]
@@ -29,7 +29,7 @@ def solution(s):
             j+=i
         
         if tmp_count != 1:
-            tmp_answer += i + 1
+            tmp_answer += i + len(str(tmp_count))
         
         tmp_answer += len(s) % i
         
@@ -37,5 +37,3 @@ def solution(s):
             
     
     return answer
-
-print(solution(input()))
